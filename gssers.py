@@ -1,8 +1,6 @@
-# 🚀 TITAN RESEARCH MISSION
-
-print("=" * 50)
+print("=" * 28)
 print("🚀 TITAN RESEARCH MISSION")
-print("=" * 50)
+print("=" * 28)
 
 # LISTA DE MENSAGENS
 
