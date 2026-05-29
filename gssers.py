@@ -1,6 +1,6 @@
-print("=" * 28)
+print("=" * 35)
 print("🚀 TITAN RESEARCH MISSION")
-print("=" * 28)
+print("=" * 35)
 
 # LISTA DE MENSAGENS
 
@@ -15,8 +15,13 @@ oxigenio = float(input("🫁 Oxigênio (%): "))
 
 # STATUS DOS MÓDULOS
 
+print("\nDigite:")
+print("- Operacional")
+print("- Instável")
+print("- Falha")
+
 modulos = {
-    "Painel Solar": input("🔋 Painel Solar: "),
+    "Painel Solar": input("\n🔋 Painel Solar: "),
     "Controle Térmico": input("❄ Controle Térmico: "),
     "Sistema de Comunicação": input("📡 Sistema de Comunicação: "),
     "Suporte de Vida": input("🫁 Suporte de Vida: ")
@@ -89,7 +94,7 @@ else:
 
     mensagens.append("✅ Oxigênio normal")
 
-# ALERTAS DOS MÓDULOS
+# VERIFICAÇÃO DOS MÓDULOS
 
 mensagens.append("\n🛰 VERIFICAÇÃO DOS MÓDULOS\n")
 
@@ -156,7 +161,6 @@ else:
     mensagens.append("✅ Nenhuma situação crítica detectada")
 
 mensagens.append("✅ Monitoramento concluído")
-
 mensagens.append("🚀 Titan Research Mission finalizada")
 
 # EXIBIÇÃO FINAL
