@@ -8,7 +8,7 @@ mensagens = []
 
 # RECEBIMENTO DOS DADOS
 
-temperatura = float(input("🌡 Temperatura da nave: "))
+temperatura = float(input("🌡 Temperatura da nave (°C): "))
 energia = float(input("🔋 Energia (%): "))
 comunicacao = float(input("📡 Comunicação (%): "))
 oxigenio = float(input("🫁 Oxigênio (%): "))
@@ -18,7 +18,7 @@ oxigenio = float(input("🫁 Oxigênio (%): "))
 modulos = {
     "Painel Solar": input("🔋 Painel Solar: "),
     "Controle Térmico": input("❄ Controle Térmico: "),
-    "Comunicação": input("📡 Sistema de Comunicação: "),
+    "Sistema de Comunicação": input("📡 Sistema de Comunicação: "),
     "Suporte de Vida": input("🫁 Suporte de Vida: ")
 }
 
@@ -39,48 +39,96 @@ for modulo, status in modulos.items():
 
     mensagens.append(f"{modulo}: {status}")
 
-# ALERTAS
+# ALERTAS DA MISSÃO
 
-mensagens.append("\n⚠ ALERTAS\n")
+mensagens.append("\n⚠ ALERTAS DA MISSÃO\n")
+
+alerta = False
+
+# TEMPERATURA
 
 if temperatura > 80:
+
     mensagens.append("🚨 Temperatura crítica!")
+    alerta = True
+
+else:
+
+    mensagens.append("✅ Temperatura normal")
+
+# ENERGIA
 
 if energia < 20:
+
     mensagens.append("🚨 Energia muito baixa!")
+    alerta = True
+
+else:
+
+    mensagens.append("✅ Energia normal")
+
+# COMUNICAÇÃO
 
 if comunicacao < 30:
+
     mensagens.append("🚨 Comunicação instável!")
+    alerta = True
+
+else:
+
+    mensagens.append("✅ Comunicação normal")
+
+# OXIGÊNIO
 
 if oxigenio < 60:
+
     mensagens.append("🚨 Oxigênio abaixo do ideal!")
+    alerta = True
+
+else:
+
+    mensagens.append("✅ Oxigênio normal")
 
 # ALERTAS DOS MÓDULOS
 
+mensagens.append("\n🛰 VERIFICAÇÃO DOS MÓDULOS\n")
+
 for modulo, status in modulos.items():
 
-    if status.lower() == "falha":
+    status = status.lower()
+
+    if status == "falha":
 
         mensagens.append(f"🚨 Falha detectada em {modulo}")
+        alerta = True
 
-    elif status.lower() == "instável":
+    elif status == "instável":
 
-        mensagens.append(f"⚠ {modulo} instável")
+        mensagens.append(f"⚠ {modulo} operando de forma instável")
+        alerta = True
+
+    else:
+
+        mensagens.append(f"✅ {modulo} operacional")
 
 # DECISÕES AUTOMÁTICAS
 
 mensagens.append("\n🤖 DECISÕES AUTOMÁTICAS\n")
 
 if temperatura > 80:
+
     mensagens.append("❄ Sistema de resfriamento ativado")
 
 if energia < 20:
+
     mensagens.append("🔋 Modo econômico ativado")
 
 if comunicacao < 30:
+
     mensagens.append("📡 Reinicialização da antena")
 
 if oxigenio < 60:
+
     mensagens.append("🫁 Liberação emergencial de oxigênio")
 
 # SUSTENTABILIDADE
@@ -98,6 +146,14 @@ else:
 # RELATÓRIO FINAL
 
 mensagens.append("\n📄 RELATÓRIO FINAL\n")
+
+if alerta:
+
+    mensagens.append("⚠ Situações críticas foram detectadas")
+
+else:
+
+    mensagens.append("✅ Nenhuma situação crítica detectada")
 
 mensagens.append("✅ Monitoramento concluído")
 
