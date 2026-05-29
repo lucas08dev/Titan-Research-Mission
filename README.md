@@ -20,6 +20,12 @@ O projeto foi desenvolvido utilizando conceitos de:
 - sustentabilidade energética.
 
 ---
+## 👨‍💻 Desenvolvedores
+
+- Lucas Silva de Abreu
+- João Camperlingo
+  
+---
 
 # 🎯 Objetivo
 
